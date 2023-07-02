@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ note.title }}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>{{ note.title }}</h1>
+
+    <div class="alert alert-info">
+        <p>{{ note.text }}</p>
+        <p><b>Date: {{ note.date.date() }}</b></p>
+        <a href="/posts/{{ note.id }}/delete" class="btn btn-danger">Delete</a>
+        <a href="/posts/{{ note.id }}/update" class="btn btn-success">Edit</a>
+    </div>
+
+</div>
+
+{% endblock %}

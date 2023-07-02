@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All notes
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>All notes</h1>
+
+    {% if notes|length > 0 %}
+        {% for el in notes %}
+        <div class="alert alert-info">
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.intro }}</p>
+            <p><b>Date: {{ el.date.date() }}</b></p>
+            <a href="/posts/{{ el.id }}" class="btn btn-warning">Details</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>Nothing here! Time to add something!</p>
+    {% endif %}
+</div>
+
+{% endblock %}
